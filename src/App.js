@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="App">
-      <News />
+      <News />   
       <CoinTable />
     </div>
   );
