@@ -1,9 +1,10 @@
 import React from "react";
 import {useEffect, useState} from 'react';
 import Axios from 'axios';
-import './TableStyles.css';
+import './Styles.css';
 
 const CoinTable = () => {
+
     const [coinList, setCoinList] = useState([]);
 
     useEffect(() => {
@@ -16,30 +17,42 @@ const CoinTable = () => {
 
     return (
         <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Icon</th>
+                        <th>Price</th>
+                        <th>24h%</th>
+                        <th>7d%</th>
+                        <th>Market Cap</th>
+                    </tr> 
+                </thead>
+            </table>
            {coinList.map((coin) =>{
             return (
-                <table cellPadding={0} cellSpacing={0}>
-                    <thead>
-                    <tr>
-                        <th>Name:</th>
-                        <th>Icon:</th>
-                        <th>Symbol:</th>
-                        <th>Price:</th>
-                    </tr> 
-                    </thead>
+                <table>
                     <tbody>  
                     <tr>
                         <td>
                             {coin.name}
+                            <br/>
+                            ( {coin.symbol} )
                         </td> 
                         <td>
-                            <img src={coin.icon} alt="coin icon" />
+                        <img src={coin.icon} alt="coin icon" />
                         </td>
                         <td>
-                            {coin.symbol}
+                            ${coin.price.toFixed(2)}
                         </td>
                         <td>
-                            {coin.price}
+                            {coin.priceChange1h}%
+                        </td>
+                        <td>
+                            {coin.priceChange1w}%
+                        </td>
+                        <td>
+                            ${coin.marketCap}
                         </td>
                     </tr> 
                     </tbody>
