@@ -12,17 +12,16 @@ const News = () => {
     useEffect(() => {
         Axios.get(`https://api.coinstats.app/public/v1/news/bullish?skip=0&limit=8`)
         .then((response) => {
+            //pass response data to setNews method
             setNews(response.data.news);
         }, [])
     })
 
     return (
         <div>
-            <header>
-                <h1>Crypto Checker</h1>
-                <hr/>
-                </header>
-            <br/><br />
+             <div style={{width:"90%", height:"85%", margin:"auto", 
+                borderRadius:"5px", 
+                backgroundColor:"rgb(40, 39, 39)"}}> 
             {news.map((article) => {
                 return (
                     <div className="newsContainer">
@@ -30,14 +29,13 @@ const News = () => {
                        <div className="innerContainer">
                        <img className="newsImg" src={article.imgURL} alt="new images" />
                        <h4>{article.title}</h4>
-                       <h5>{article.source}</h5> 
-                     
-
+                       <h5 className="sourceName">{article.source}</h5> 
                        </div>
                        </a>
                     </div>   
                 )
             })}
+            </div>
         </div>
     )
 }

@@ -20,49 +20,49 @@ const CoinTable = () => {
       const currency = new Intl.NumberFormat('en-US', {style: 'currency', currency: 'USD'});
 
     return (
-        <div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Icon</th>
-                        <th>Coin</th>
-                        <th>Price</th>
-                        <th>24hr</th>
-                        <th>7d</th>
-                        <th>Market Cap</th>
-                    </tr> 
-                </thead>
-            </table>
-           {coinList.map((coin) =>{
-            return (
-                <table>
-                    <tbody>  
-                    <tr>
-                        <td>
-                        <img src={coin.icon} alt="coin icon" />
-                        </td>
-                        <td style={{color:"greenYellow"}}>
-                        {coin.symbol}
-                        </td>
-                        <td>
-                        ${coin.price.toFixed(0)}
-                        </td>
-                        <td>
-                        {coin.priceChange1h}%
-                        </td>
-                        <td>
-                        {coin.priceChange1w}%
-                        </td>
-                        <td>
-                            {currency.format(coin.marketCap).split(',')[0]+'B'}
-                        </td>
-                    </tr> 
-                    </tbody>
-                </table>
+            <div>
+                <div style={{width:"80%", margin:"auto", borderRadius:"5px", backgroundColor:"rgb(40, 39, 39)"}}>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Coin</th>
+                                <th>Price</th>
+                                <th>24hr%</th>
+                                <th>7d%</th>
+                                <th>Market Cap</th>
+                            </tr> 
+                        </thead>
+                    </table>
+                {coinList.map((coin) =>{
+                    return (
+                        <table>
+                            <tbody>  
+                            <tr>
+                                <td style={{color:"greenYellow"}}> 
+                                <img src={coin.icon} alt="coin icon" />
+                                <br/><br/>    
+                                {coin.symbol}
+                                </td>
+                                <td>
+                                ${coin.price.toFixed(0)}
+                                </td>
+                                <td>
+                                {coin.priceChange1h}%
+                                </td>
+                                <td>
+                                {coin.priceChange1w}%
+                                </td>
+                                <td>
+                                    {currency.format(coin.marketCap).split(',')[0]+'B'}
+                                </td>
+                            </tr> 
+                            </tbody>
+                        </table>
+                    )
+                })}
+                </div>
+            </div> 
             )
-           })}
-        </div>
-    )
 
 }
 export default CoinTable;
