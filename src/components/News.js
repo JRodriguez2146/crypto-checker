@@ -19,7 +19,7 @@ const News = () => {
 
     return (
         <div>
-             <div style={{width:"90%", height:"85%", margin:"auto", 
+             <div style={{width:"85%", height:"85%", margin:"auto", 
                 borderRadius:"5px", 
                 backgroundColor:"rgb(40, 39, 39)"}}> 
             {news.map((article) => {

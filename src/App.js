@@ -4,15 +4,13 @@ import CoinTable from './components/CoinTable';
 import News from './components/News';
 import Trending from './components/Trending';
 import './components/Styles.css';
+import Header from './components/Header';
 
 function App() {
 
   return (
     <div className="App">  
-      <header>
-        <h1>Crypto Checker</h1>
-        <hr/>
-      </header>
+      <Header />
       <Trending />
       <br/><br/>
       <News /> 

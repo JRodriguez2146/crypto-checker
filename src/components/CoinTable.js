@@ -21,7 +21,7 @@ const CoinTable = () => {
 
     return (
             <div>
-                <div style={{width:"80%", margin:"auto", borderRadius:"5px", backgroundColor:"rgb(40, 39, 39)"}}>
+                <div style={{width:"90%", margin:"auto", borderRadius:"5px", backgroundColor:"rgb(40, 39, 39)"}}>
                     <table>
                         <thead>
                             <tr>
