@@ -3,7 +3,6 @@ import './App.css';
 import CoinTable from './components/CoinTable';
 import News from './components/News';
 import Trending from './components/Trending';
-import './components/Styles.css';
 import Header from './components/Header';
 
 function App() {
